@@ -77,6 +77,8 @@ IoT 개발자 닷넷 리포지토리(기본, 중급, 응용, 프로젝트)
 - 기본문법
 
     ```cs
+    using System;
+
     // C#은 네임스페이스 내 동작
     // Python에 import로 불러올수 있는 패키지와 동일
     namespace ConsoleApp2
@@ -105,11 +107,12 @@ IoT 개발자 닷넷 리포지토리(기본, 중급, 응용, 프로젝트)
     - 기본타입(구조체) : bool, sbyte, ..., ushort, int, uint, long, float, double, decimal, char, bool
     - 기본타입과 매핑되는 구조체 타입 : Boolean, Int16~128, Single, Double    
     - 참조타입(클래스) : class, interface, array, string
-        - 대문자로 시작하는 타입명
     - 변수 선언은 C/C++와 동일
     - 형변환
         - 묵시적 형변환 : 작은 타입 변수를 큰 타입의 변수로 옮길때 
         - 명시적 형변환 : `(타입)` 지정
+    - var : 가변타입. javascript var와 동일. C++ auto와 동일
+    - 변수명 지정 시 class AppleName와 같이 사용(java appleName)
 
     ![alt text](image-4.png)
 
@@ -117,16 +120,16 @@ IoT 개발자 닷넷 리포지토리(기본, 중급, 응용, 프로젝트)
     - C/C++ 과 동일
 
 - 제어문
-    - if, for, while 까지 C/C++ 동일
+    - if, switch, for, while 까지 C/C++ 동일
     - foreach는 컬렉션 이후 
 
 - 메서드 
     - C/C++, Python 함수와 동일
 
 - 객체지향
-    - C++, Python 객체지향 클래스 내용과 동일
+    - C++, Python 객체지향 클래스 개념/내용과 동일
     - 클래스 : 명사와 동사의 집합
-        - 명사 : 멤버변수, 속성(Property)
+        - 명사 : 멤버변수, 속성(Property), Get or Set            
         - 동사 : 멤버함수, 메서드(Method)
 
     ```cs
@@ -147,18 +150,60 @@ IoT 개발자 닷넷 리포지토리(기본, 중급, 응용, 프로젝트)
 
     - 생성자 : 클래스명과 동일한 특수메서드
     - 오버로딩 지원 : 메서드 파라미터 갯수가 다르면 가능
-    - 상속 : 동일하게 사용가능, 멀티클래스 상속 불가
+    - 상속 : 동일하게 사용가능, 단일 클래스 상속 지원
         - 다중 인터페이스 구현으로 멀티클래스 상속 대체(Java, Python 동일)
     - 오버라이딩 가능 : 부모클래스의 메서드와 다르게 동작하는 메서드로 변경
     - this : 자기 클래스를 지칭할 때 
 
+- 클래스 속성에서
+    - get : 속성값을 가져올 수만 있음
+    - set : 속성의 값을 변경할 수만 가능    
+    - get; set; : 둘 다 가능
+    
 - 컬렉션
     - 배열, 리스트 등 여러요소를 묶어서 사용하는 구조
+    - ArrayList, List, Hashtable, Dictionary, Stach, Queue, Hashset, ...
+    - 배열보다 컬렉션을 사용할 것
 
     ![alt text](image-5.png)
 
-- 파일입출력
+    - foreach : python `for (i in range(n))` 와 동일
+    - 보기 > 개체 브라우저
 
+- 예외처리
+    - try ~ catch ~ finally 형식 사용 가능
 
 ### MSDN(MicroSoft Developer Network)
 - https://learn.microsoft.com/ko-kr/dotnet/csharp/
+
+### C# 프로그래밍
+
+- C#으로 프로그램을 구현한다는 뜻
+    - 윈도우 애플리케이션(WinApp), 웹앱(WebApp), Unity, 모바일(MAUI), 키오스크(WPF) 개발함
+    - GUI(Graphic User Interface) 활용
+
+### 윈앱
+
+- WinForms, Window Application, GUI... -> `WinApp`으로 통일
+    - Windows Forms : 가장 오래된 윈앱개발 방식
+    - WPF : 좀 더 최신의 윈앱개발 방식
+
+- 윈앱 개발에는 각 두개로 구분되어 있음
+    - .NET Framework : .NET Framework 4.8 이전 구형 개발방식
+    - 기본 : .NET 5.0 이상의 최신 개발방식
+
+### 윈폼즈 앱 구현
+
+1. 새 프로젝트
+2. 프로젝트명, 위치, 솔루션명 지정 다음
+3. 프레임워크 .NET 10.0 선택 후 만들기
+4. IDE 툴에서 펑션키 F4로 속성창 오픈
+5. 보기 > 도구상자 클릭
+6. 기본 개발화면
+
+    ![alt text](image-6.png)
+
+7. 저장할때는 항상 Ctrl+Shift+S(모두 저장) 저장할 것
+8. 도구상자의 컨트롤을 디자인 화면으로 드래그해서 구성 
+9. 컨트롤의 속성 변경으로 디자인 적용
+10. 컨트롤의 이벤트 추가로 기능 구현
