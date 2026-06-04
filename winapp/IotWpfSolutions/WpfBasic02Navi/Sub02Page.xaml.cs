@@ -18,9 +18,15 @@ namespace WpfBasic02Navi
     /// </summary>
     public partial class Sub02Page : Page
     {
-        public List<Employee> employees;
+        public List<Employee> Employees { get; set; }
 
         public Employee SelectedEmployee { get; set; }
+
+        public List<string> Departments { get; set; }
+
+        public string SelectedDepartment { get; set; }
+
+
         public Sub02Page()
         {
             InitializeComponent();
@@ -28,7 +34,16 @@ namespace WpfBasic02Navi
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            employees = new List<Employee>
+            Departments = new List<string>
+            {
+                "개발팀",
+                "영업팀",
+                "인사팀",
+                "디자인팀",
+                "경영팀"
+            };
+
+            Employees = new List<Employee>
             {
                 new Employee
                 {
@@ -82,7 +97,8 @@ namespace WpfBasic02Navi
         };
 
             // 데이터그리드 할당
-            DgrEmployees.ItemsSource = employees;
+            this.DataContext = this;    // 코드비한인드의 모든 바인딩 객체를 화면상에서 사용하겠다
+            DgrEmployees.ItemsSource = Employees;
     }
     }
 }

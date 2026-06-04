@@ -4,7 +4,7 @@ using System.Text;
 
 namespace WpfBasic02Navi
 {
-    internal class Employee
+    public class Employee
     {
         public int Id { get; set; }     // PK와 동일
 
