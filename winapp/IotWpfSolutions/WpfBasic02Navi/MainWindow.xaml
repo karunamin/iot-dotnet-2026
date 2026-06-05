@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfBasic02Navi"
         mc:Ignorable="d"
-        Title="네비게이션앱" Height="600" Width="960"
+        Title="네비게이션앱" Height="550" Width="950" 
         ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
@@ -19,8 +19,7 @@
             <ColumnDefinition Width="15"/>
         </Grid.ColumnDefinitions>
 
-        
-        <!-- 프레임에 페이지를 추가-->
-        <Frame Grid.Row="1" Grid.Column="1" Background="Azure" Source="/MenuPage.xaml"/>
+        <!-- 프레임에 페이지를 추가 -->
+        <Frame Grid.Row="1" Grid.Column="1" Background="Azure" Source="/MenuPage.xaml" />
     </Grid>
 </Window>

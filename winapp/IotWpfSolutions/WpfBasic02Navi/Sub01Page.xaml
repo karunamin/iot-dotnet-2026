@@ -6,55 +6,35 @@
       xmlns:local="clr-namespace:WpfBasic02Navi"
       mc:Ignorable="d" 
       d:DesignHeight="520" d:DesignWidth="890"
-      Title="단순컨트롤" Loaded="Page_Loaded">
+      Title="단순 컨트롤" Loaded="Page_Loaded">
     <Page.Resources>
-        <Style  TargetType="Button">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Grid>
-                            <Rectangle RadiusX="12" RadiusY="12" 
-                Fill="#25A3FB" Stroke="DarkBlue" StrokeThickness="4" >
-                                <Rectangle.Effect>
-                                    <DropShadowEffect Color="Black"
-                                  BlurRadius="20"
-                                  ShadowDepth="10"
-                                  Direction="315"
-                                  Opacity="0.7" />
-                                </Rectangle.Effect>
-                            </Rectangle>
-                            <Label Content="{TemplateBinding Content}" Foreground="White" FontSize="20" FontWeight="ExtraBold"                                   
-   HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>    
+
     </Page.Resources>
-    
+
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Label Content="단순 컨트롤" Grid.Row="0" Grid.Column="0"/>
+        <Label Content="단순 컨트롤" Grid.Row="0" Grid.Column="0" />
 
-        <StackPanel Grid.Row="1" Grid.Column="0" Grid.RowSpan="2">
-            <Label Content="레이블 컨트롤(기본 padding)"/>
-            <TextBlock Text="텍스트블록 컨트롤(padding 없음)"/>
-            <TextBlock Text="일반 텍스트박스 컨트롤"/>
-            <PasswordBox Password="123456"/>
-            <Slider Minimum="0" Maximum="100" TickFrequency="10" Value="20"/>
-            <ProgressBar Minimum="0" Maximum="100" Value="50" Height="20"/>
-            <CheckBox Content="체크박스 컨트롤"/>
-            <RadioButton Content="라디오버튼 컨트롤"/>
-            <Button Content="버튼 컨트롤"/>
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <Label Content="레이블 컨트롤(기본 padding)" />
+            <TextBlock Text="텍스트블록 컨트롤(padding없음)" />
+            <TextBox Text="일박 텍스트박스 컨트롤" />
+            <PasswordBox Password="123456" />
+            <Slider x:Name="SliderTest" Minimum="0" Maximum="100" TickFrequency="10" Value="20" />
+            <ProgressBar Minimum="0" Maximum="100" Value="{Binding Value, ElementName=SliderTest}" Height="20" />
+            <CheckBox Content="체크박스 컨트롤" />
+            <RadioButton Content="라디오버튼 컨트롤" />
+            <Button Content="버튼 컨트롤" />
+
         </StackPanel>
 
         <Grid Grid.Row="1" Grid.Column="1">
@@ -63,44 +43,56 @@
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
 
-            <Image Source="/cat.jpg" Width="200" Height="100" Stretch="Uniform" />
-            <MediaElement x:Name="MediaPlayer" Grid.Column="1" Width="200" Height="100"
-                          LoadedBehavior="Manual" Stretch="Uniform"/>
+            <Image Grid.Column="0" Source="/cat01.jpg" Width="200" Stretch="Uniform"  />
+            <MediaElement x:Name="MediaPlayer" Grid.Column="1" Width="200" Height="100" 
+                          LoadedBehavior="Manual" Stretch="Uniform" />
         </Grid>
 
-        <Canvas Grid.Row="2" Grid.Column="0">
-            <Rectangle Width="100" Height="100"
-                       Fill="Red" Stroke="CadetBlue" StrokeThickness="5"
+        <Canvas Grid.Row="2" Grid.Column="0" Background="LightGray" ClipToBounds="True">
+            <Rectangle Width="100" Height="100" 
+                       Fill="Red" Stroke="CadetBlue" 
+                       StrokeThickness="5"
                        Canvas.Left="-10" Canvas.Top="-40"/>
 
-            <Ellipse Width="100" Height="100" 
-                     Fill="GreenYellow" Stroke="Yellow" StrokeThickness="4" 
-                     Canvas.Left="15" Canvas.Top="12"/>            
+            <Ellipse Width="200" Height="100" 
+                     Fill="GreenYellow" Stroke="Yellow" 
+                     StrokeThickness="4" StrokeDashArray="5,2,1,2" 
+                     StrokeDashCap="Round"
+                     Canvas.Top="45" RenderTransformOrigin="0.5,0.5">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="45"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Ellipse.RenderTransform>
+            </Ellipse>
 
         </Canvas>
 
         <Grid Grid.Row="2" Grid.Column="1">
             <Button Margin="50" Click="Button_Click" Content="Press Me">
-                <!--Button.Template>
+                <!-- Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Grid>
                             <Rectangle RadiusX="12" RadiusY="12" 
-                                    Fill="#25A3FB" Stroke="DarkBlue" StrokeThickness="4" >
+                                       Fill="#25A3FB" Stroke="DarkBlue" StrokeThickness="4">
                                 <Rectangle.Effect>
                                     <DropShadowEffect Color="Black"
-                                                      BlurRadius="20"
-                                                      ShadowDepth="10"
-                                                      Direction="315"
-                                                      Opacity="0.7" />
+                                                      BlurRadius="15"
+                                                      ShadowDepth="5"
+                                                      Direction="320"
+                                                      Opacity="0.5" />
                                 </Rectangle.Effect>
                             </Rectangle>
-                            <Label Content="{TemplateBinding Content}" Foreground="White" FontSize="20" FontWeight="ExtraBold"                                   
-                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <Label Content="{TemplateBinding Content}" 
+                                   Foreground="White" FontSize="20" FontWeight="ExtraBold"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Grid>
                     </ControlTemplate>
-                </Button.Template-->
+                </Button.Template -->
             </Button>
         </Grid>
-        
     </Grid>
 </Page>

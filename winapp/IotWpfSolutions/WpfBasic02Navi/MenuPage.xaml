@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Button x:Name="BtnMenu01" Content="SimpleControls Page" Margin="10,10,5,10" Width="160" Click="BtnMenu01_Click"/>
+            <Button x:Name="BtnMenu01" Content="Controls Page" Margin="10,10,5,10" Width="160" Click="BtnMenu01_Click" />
             <Button x:Name="BtnMenu02" Content="Content Page" Margin="5,10,5,10" Width="150" Click="BtnMenu02_Click"/>
             <Button x:Name="BtnMenu03" Content="WPF 바인딩" Margin="5,10,5,10" Width="150" Click="BtnMenu03_Click"/>
             <Button x:Name="BtnMenu04" Content="윈폼 바인딩" Margin="5,10,5,10" Width="150" Click="BtnMenu04_Click"/>
@@ -24,27 +24,18 @@
         </StackPanel>
 
         <Grid Grid.Row="1">
-            <Button Content="Page06" Margin="10,10,536,76" RenderTransformOrigin="0.5,0.5">
-                <Button.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform AngleX="-0.689"/>
-                        <RotateTransform/>
-                        <TranslateTransform X="-0.463"/>
-                    </TransformGroup>
-                </Button.RenderTransform>
-            </Button>
-            <Button Content="Page07" Margin="269,10,266,75"/>
-            <Button Content="Page08" Margin="539,10,10,75"/>
-            <Button Content="Page09" Margin="10,80,237,10"/>
-            <Button Content="Page10" Margin="568,80,10,10" />
-        </Grid >
+            <Button Content="Page06" Margin="10,10,691,96" />
+            <Button Content="Page07" Margin="264,10,361,96" />
+            <Button Content="Page08" Margin="594,10,10,96" />
+            <Button Content="Page09" Margin="10,92,318,10" />
+            <Button Content="Page10" Margin="637,92,10,10" />
+        </Grid>
 
         <DockPanel Grid.Row="2">
             <Button Content="Page11" DockPanel.Dock="Top" />
-            <Button Content="Page12" DockPanel.Dock="Left"/>
-            <Button Content="Page13" DockPanel.Dock="Right"/>
-            <Button Content="Page14" DockPanel.Dock="Bottom"/>
+            <Button Content="Page12" DockPanel.Dock="Left" />
+            <Button Content="Page13" DockPanel.Dock="Right" />
+            <Button Content="Page14" DockPanel.Dock="Bottom" />
             <Button Content="Page15" />
         </DockPanel>
     </Grid>

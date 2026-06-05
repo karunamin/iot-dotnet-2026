@@ -25,20 +25,22 @@ namespace WpfBasic02Navi
 
         private void BtnMenu01_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("Sub01Page.xaml", UriKind.RelativeOrAbsolute));
+            NavigationService.Navigate(new Uri("/Sub01Page.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void BtnMenu02_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("Sub02Page.xaml", UriKind.RelativeOrAbsolute));
-
+            NavigationService.Navigate(new Uri("/Sub02Page.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void BtnMenu03_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("Sub03Page.xaml", UriKind.RelativeOrAbsolute));
-
+            NavigationService.Navigate(new Uri("/Sub03Page.xaml", UriKind.RelativeOrAbsolute));
         }
 
+        private void BtnMenu04_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Sub04Page.xaml", UriKind.RelativeOrAbsolute));
+        }
     }
 }

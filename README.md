@@ -437,14 +437,15 @@ IoT 개발자 닷넷 리포지토리(기본, 중급, 응용, 프로젝트)
 - Windows Presentation Foundation - UI프레임워크
     - WinForms보다 더 현대적인 UI 제작 가능
     - 애니메이션, 2D/3D 그래픽 미디어적인 강력함
-    - 데이터바인딩(DB, JSON 등) 바인딩 기능 강력
+    - 데이터(DB, JSON 등) 바인딩 기능 강력
     - XAML(XML기반 UI설계방식)기반 디자인, 로직과 완전분리 가능
     - UI와 로직의 완전분리를 위해 `MVVM 패턴` 사용이 쉬움
 
 ### WPF 특징
 
 - XAML 사용 - 안드로이드, Qt등의 기존 XML 기반의 디자인 가능
-    - 드래그앤드랍으로 기본 디자인 후 세밀한 조정
+    - 드래그앤드랍으로 기본 디자인 후 세밀한 조정은 코딩으로 가능
+
     ```xml
     <Button Content="클릭" Width="100" Height="40" />
     ```
@@ -461,28 +462,28 @@ IoT 개발자 닷넷 리포지토리(기본, 중급, 응용, 프로젝트)
 - 스타일, 테마 적용이 쉬움
     - XML 기반, HTML의 CSS와 유사
     - 디자인 자유도가 아주 높음
-
+    
 ### WPF 프로젝트 구성
-- App.xaml : 프로그램 시작점에 들어가는 스타일 등(static void Main과 유사)
+- App.xaml : 프로그램 시작점에 들어가는 스타일 등(static void Main과 유사)  
     - App.xaml.cs : 프로그램 시작점에 들어가는 초기화 로직
 - MainWindow.xaml : 메인폼 디자인과 동일
-    - MainWindow.xaml.cs : 코드 비하인드
+    -  MainWindow.xaml.cs : 코드비하인드
 
 ### WPF MainWindow.xaml 디자인 순서
-1. Grid, StackPanel; Canvas 등으로 화면 구역 나누기
+1. `Grid`, StackPanel, Canvas 등으로 화면 구역 나누기
 2. 구역별로 컨트롤 배치
 3. xaml 수정
-    - Blend for Visual Studio 에서 디자이너가 작업
+    - Blend for Visual Studio에서 디자이너가 작업
     - Visual Studio에 반영
-4. xaml.cs 비하인드 코드 작성
-    - 모든 객체는 
+4. xaml.cs 비하인드코드 작성
+    - 모든 객체는 Margin(외부여백), Padding(내부여백)
+    - Achoring 표시 : 체인이 연결/끊김으로 표시
     ![alt text](image-17.png)
 
-    - 그리드를 나누는 표시
+    - 그리드를 나누는 표시 
     - 각 나눈 영역은 n배(*)로 표시
-
-    ![alt text](image-19.png)
-    
+    - *가 없으면 픽셀 고정 사이즈
+    ![alt text](image-18.png)
 5. 새 창 추가
 6. App.xaml에서 시작하는 창을 변경
 7. xaml은 대부분 도구상자, 속성을 사용하는 것보다 직접 xaml코딩으로 디자인 많이함
@@ -491,36 +492,35 @@ IoT 개발자 닷넷 리포지토리(기본, 중급, 응용, 프로젝트)
 
 - 하나의 창에 여러 페이지를 전환하면서 사용하는 방식앱
 
-![alt text](image-20.png)
+![alt text](image-19.png)
 
 #### 화면 레이아웃 구성
 - Grid : 가장 기본. 내부들어오는 객체가 그리드셸을 가득 채움(Margin이 없을때)
-    - Margin : 숫자하나(상하좌우 동일 여백), 두개(좌우/상하), 네개(좌,우,상,하)
+    - Margin : 숫자하나(상하좌우 동일 여백), 두개(좌우/상하), 네개(좌,상,우,하 여백)
 - StackPanel : 내부의 객체가 순차적으로 쌓임. 수평/수직
     - Orientation="Vertical"이 기본
 - DockPanel : 내부의 객체를 상하좌우 중앙으로 분리
     - DockPanel.Dock에 Left, Right, Top, Bottom으로 위치지정
-- Canvas 
+- Canvas : 
 
 #### 이미지, 동영상
 - 이미지 - 솔루션 탐색기 선택
     - 속성 > 빌드 작업 `리소스` 변경
 - 동영상 - 솔루션 탐색기 선택
     - 속성 > 빌드 작업 `내용`으로 변경
-    - 출력 디렉토리로 복사 `새 버전이면 복사`, `항상 복`사 중 선택
+    - 출력 디렉토리로 복사 `새 버전이면 복사`, `항상 복사` 중 선택
     - bin 아래 debug/release 폴더에 복사
     - MediaElement Source 할당작업을 코드비하인드에서 처리
 
-#### 컨트럴 디자인
+#### 컨트롤 디자인
 
-- 일반버튼
+- 일반 버튼 원본
 
 ```xml
 <Button Margin="50" Click="Button_Click" Content="Press Me">
 </Button>
 ```
-
-![alt text](image-21.png)
+![alt text](image-20.png)
 
 - Button.Template 속성을 변경
 
@@ -531,8 +531,7 @@ IoT 개발자 닷넷 리포지토리(기본, 중급, 응용, 프로젝트)
             <Grid>
                 <Rectangle RadiusX="12" RadiusY="12" 
                            Fill="#25A3FB" Stroke="DarkBlue" StrokeThickness="4" />
-                <Label Content="{TemplateBinding Content}"
-                    Foreground="White" FontSize="20" FontWeight="ExtraBold"                                   
+                <Label Content="{TemplateBinding Content}" Foreground="White" FontSize="20" FontWeight="ExtraBold"                                   
                        HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Grid>
         </ControlTemplate>
@@ -540,10 +539,10 @@ IoT 개발자 닷넷 리포지토리(기본, 중급, 응용, 프로젝트)
 </Button>
 ```
 
-![alt text](image-22.png)
+![alt text](image-21.png)
 
 - ControlTemplate TargetType을 Button 지정
-- 보통 Grid(객체들이 겹쳐서 표현되기 때문) 안ㄴ에 여러 객체를 위치
+- 보통 Grid(객체들이 겹쳐서 표현되기 때문) 안에 여러 객체를 위치
 - 부모객체(Button)의 속성을 가져다 쓰려면 `{TemplateBinding 속성명}` 형태로 설정
 
 ```xml
@@ -569,12 +568,11 @@ IoT 개발자 닷넷 리포지토리(기본, 중급, 응용, 프로젝트)
     </Button.Template>
 </Button>
 ```
-
 - 그림자 추가
 
-![alt text](image-23.png)
+![alt text](image-22.png)
 
-#### 리소스 다자인
+#### 리소스 디자인
 
 - 컨트롤 디자인은 하나의 객체만 가능
 - 컨트롤 디자인을 적용하려면 객체마다 전부 복사해야 함
@@ -583,61 +581,115 @@ IoT 개발자 닷넷 리포지토리(기본, 중급, 응용, 프로젝트)
     2. App.xaml에 리소스 생성하면 프로젝트 내 모든 객체에 적용
     3. *.xaml로 리소스 파일 만들고, 코드내에서 불러와서 적용
 
-- Page.Resources, Window.Resources, Application.Resources 태그 내에 작성
+- Page.Resources, Window.Resources, Application.Resource 태그 내에 작성
 
 ```xml
 <!-- 기본틀 -->
 <Style x:Key="BlueShadowButtonStyle" TargetType="Button">
     <Setter Property="Template">
         <Setter.Value>
-            <!-- 컨트롤 디자인 내용 붙여넣으면 끝! -->
-            <!-- ControlTemplate 하위만 복사 -->
+           <!-- 컨트롤 디자인 내용 붙여넣으면 끝! --> 
+           <!-- ControlTemplate 하위만 복사 -->
         </Setter.Value>
     </Setter>
-</Style>  
+</Style>
 ```
 
-- x:Key를 삭제하면 페이지, 창, 프로젝트내 모든 객체에 적용
+- x:Key를 삭제하면 페이지, 창, 프로젝트내 모든 객체에 바로 적용
 
-![alt text](image-24.png)
+![alt text](image-23.png)
 
 - Key를 적용하려면 해당 객체에 Style 속성 사용
     - `Style="{StaticResource BlueShadowButtonStyle}"`
 
-- App.xaml 방식로드
+- 리소스 파일로 저장하고 로드하기
+
 ```xml
-<Application x:Class="WpfBasic02Navi.App"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:WpfBasic02Navi"
-             StartupUri="MainWindow.xaml">
-    <Application.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/ButtonStyles.xaml"/>                
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Application.Resources>
-</Application>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- x:Key 는 나중에 -->
+    <Style TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Rectangle RadiusX="12" RadiusY="12" 
+    Fill="#25A3FB" Stroke="DarkBlue" StrokeThickness="4">
+                            <Rectangle.Effect>
+                                <DropShadowEffect Color="Black"
+                   BlurRadius="15"
+                   ShadowDepth="5"
+                   Direction="320"
+                   Opacity="0.5" />
+                            </Rectangle.Effect>
+                        </Rectangle>
+                        <Label Content="{TemplateBinding Content}" 
+Foreground="White" FontSize="20" FontWeight="ExtraBold"
+HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
 ```
 
-![alt text](image-25.png)
+- App.xaml에서 로드 - 최종방식
+
+```xml
+<Application.Resources>
+    <ResourceDictionary>
+        <ResourceDictionary.MergedDictionaries>
+            <ResourceDictionary Source="/ButtonStyles.xaml" />
+        </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+</Application.Resources>
+```
+
+![alt text](image-24.png)
+
+### 데이터바인딩
+
+- 현재 대부분 앱은 데이터 중심
+    - 데이터저장소(DB, 파일시스템, 클라우드, OpenAPI)의 데이터를 가져와서 표시
+    - 신규, 변경, 저장소에 다시 저장
+
+- 바인딩 패턴
+    - Early Binding(static) - 컴파일 시점에서 바인딩 결정
+    - `Lazy Binding(dynamic)` - 런타임 시점에서 바인딩 결정
+
+- 바인딩 방법
+    ```xml
+    <TextBox Text="{Binding 속성값}">
+
+    <TextBox Text="{Binding Path=속성값}">
+
+    <!-- 컨트롤명에 속하는 속성값이 표시, 여기에 새 값을 입력하면 컨트롤이 상호작용 -->
+    <TextBox Text="{Binding Source={StaticResource 컨트롤명}, Path=속성값}">
+    ```
+
+- 슬라이더와 프로그래스바 바인딩
+
+    ```xml
+    <Slider x:Name="SliderTest" Value="20" />
+    <ProgressBar Value="{Binding Value, ElementName=SliderTest}"  />
+    ```
 
 - 바인딩모드
 
     | 모드 | 방향 | 내용 |
-    | :--: | :--: | :-- |
+    | :--: | :--: | :--- |
     | OneTime | ViewModel(데이터) -> 화면(한번만) | 고정제목, 버전정보, 회사명 |
     | OneWay | ViewModel -> 화면(계속) | 시계, 주식가격, 센서값, 상태표시 |
     | OneWayToSource | 화면 -> ViewModel | 거의 사용안함. 스크롤위치 저장 |
-    | TwoWay | ViewModel <-> 화면 | WPF MVVM핵심 |
+    | `TwoWay` | ViewModel <-> 화면 | WPF MVVM핵심 |
 
 - 도구상자 컨트롤별 기본값
-    - Text, Label, Rectangle, Image 는 OneWay 나머지는 거의 TwoWay
+    - TextBlock, Label, Rectangle, Image, ProgressBar 는 OneWay, 나머지는 거의 TwoWay
     - 컨트롤을 직접 사용하지 않는 것 - OneWay
     - 컨트롤을 사용자가 사용하는 것 - `TwoWay`
 
-- WPF 바인딩은 전통적인 윈폼 바인딩보다 코딩량(예외처리포함)이 적고, 쉽게 구현가능
+- WPF 바인딩은 전통적인 윈폼 바인딩보다 코딩량(예외처리포함)이 적고 쉽게 구현가능
 
 - DataContext : 데이터를 찾아올 위치. 바인딩되는 데이터를 화면상에서 적용
     - 어떤 객체에도 전부 할당 가능
@@ -678,7 +730,7 @@ IoT 개발자 닷넷 리포지토리(기본, 중급, 응용, 프로젝트)
 
             <TextBox Text="{Binding Id}" />
             <TextBox Text="{Binding Name}" />
-            ...
+            <DatePicker Text="{Binding HireDate, Mode=TwoWay}" />
             <CheckBox IsChecked="{Binding IsActive}" />
     ```
 
@@ -686,64 +738,71 @@ IoT 개발자 닷넷 리포지토리(기본, 중급, 응용, 프로젝트)
 
 ![alt text](image-26.png)
 
-### 콤보박스 바인딩
+#### 콤보박스, 리스트박스 바인딩
 
-1. ItemSource 바인딩 사용
+1. ItemsSource 바인딩 사용
 2. SelectedItem 속성 바인딩
-3. DataGrid와 사용법은 동일
+3. DataGrid와 사용법 동일
 
 ### Modern Design 적용
 
 - UI 디자인 프레임워크 사용
     - DevExpress : 윈앱이 무겁게 실행, 유료. Syncfusion, Telerik 등...
     - [HandyControl](https://github.com/handyorg/handycontrol) 무료
-    - [MaterialDesignInXamlToolkit](https://github.com/materialdesigninxaml/materialdesigninxamltoolkit)
-    - [MahApps](https://mahapps.com/) 
+    - [MaterialDesignInXamlToolkit](https://github.com/materialdesigninxaml/materialdesigninxamltoolkit) - 무료
+    - [MahApps](https://mahapps.com/) - 무료
 
-#### MahApp 적용
+#### MahApps.Metro 적용
 
-- NuGets 패키지로 설치
+- NuGet 패키지로 설치
     - MahApps.Metro, MahApps.Metro.IconPacks
 
     ![alt text](image-27.png)
+
+- NuGet Package Console에서 설치
+
+    ```powershell
+    PM> Install-Package MahApps.Metro
+    ```
 
 - App.xaml 에 리소스딕셔너리 추가
 
     ```xml
     <ResourceDictionary>
-      <ResourceDictionary.MergedDictionaries>
-        <!-- MahApps.Metro resource dictionaries. Make sure that all file names are Case Sensitive! -->
-        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
-        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
-        <!-- Theme setting -->
-        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Blue.xaml" />
-      </ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary.MergedDictionaries>
+            <!-- MahApps.Metro resource dictionaries. Make sure that all file names are Case Sensitive! -->
+            <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+            <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+            <!-- Theme setting -->
+            <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Blue.xaml" />
+        </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
     ```
 - MainWindow.xaml xmlns추가, Window 태그 MetroWindow로 변경
 
     ```xml
     <mah:MetroWindow
-    x:Class="WpfBasic03Navi.MainWindow"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        x:Class="WpfBasic03UiApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        ...
     ```
 - MainWindow.xaml.cs의 부모클래스 Window -> MetroWindow로 변경
 
     ```cs
     using MahApps.Metro.Controls;
 
-    namespace WpfBasic03Navi
+    namespace WpfBasic03UiApp
     {
         public partial class MainWindow : MetroWindow
     ```
 
     ![alt text](image-28.png)
 
-- 테마 : Light/Dark, 엑센트 : Amber ~ Yellow 까지 23개
+- 테마 : Light/Dark, 액센트 : Amber ~ Yellow 까지 23개
     - App.xaml의 Theme setting 리소스를 Light.Blue.xaml -> Dark.Mauve.xaml 등으로 변경하고 실행
 
 - MahApps.Metro가 제공하는 컨트롤 도구상자에서 드래그 사용
@@ -751,11 +810,11 @@ IoT 개발자 닷넷 리포지토리(기본, 중급, 응용, 프로젝트)
 
     ```xml
     <TextBox 
-    x:Name="TxtAuthor" Grid.Row="1" Margin="5"
-    mah:TextBoxHelper.AutoWatermark="True"
-    mah:TextBoxHelper.Watermark="저자"
-    mah:TextBoxHelper.ClearTextButton="True"
-    mah:TextBoxHelper.UseFloatingWatermark="True"
+        x:Name="TxtAuthor" Grid.Row="1" Margin="5"
+        mah:TextBoxHelper.AutoWatermark="True"
+        mah:TextBoxHelper.Watermark="저자"
+        mah:TextBoxHelper.ClearTextButton="True"
+        mah:TextBoxHelper.UseFloatingWatermark="True"
     />
     <!-- UseFloatingWatermark 컨트롤 높이 조절 필요 -->
     ```
@@ -763,36 +822,115 @@ IoT 개발자 닷넷 리포지토리(기본, 중급, 응용, 프로젝트)
 - 컨트롤 스타일
 
     ```xml
-    <Button x:Name="BtnNew" Width="100" Content="신규" Margin="5"
+    <Button x:Name="BtnNew" Width="100" Content="신규" Margin="5" 
         Style="{StaticResource MahApps.Styles.Button.Dialogs.Accent}"/>
     ```
 
-
+- 데이터그리드 정렬
+    - 왼쪽정렬 : 일반텍스트(길이 가변)
+    - 중앙정렬 : 코드종류(길이 동일)
+    - 오른쪽정렬 : 숫자, 가격 등
 
 ![alt text](image-29.png)
 
 #### DB연동 객체리스트
-- Connection
-- Command
-- DataAdapter
-- DataReader
-- DataTable
+- DataBase와 C# 간의 연동에 필요한 객체 및 변수
+    - ConnectionString : DB연결문자열. DB종류마다 포맷과 키값이 다름
+
+    ```cs
+    // 포트 지정이 필요한 경우 (기본값: 3306)
+    // localhost : 127.0.0.1
+    Server=서버IP;Port=3306;Database=DB이름;Uid=유저명;Pwd=비밀번호;
+    // 또는
+    Server=서버IP;Database=DB이름;User ID=유저명;Password=비밀번호;Charset=utf8;
+    ```
+
+    - query : DB에서 실행할 쿼리작성 문자열
+
+    - 각 DB별 외부패키지 NuGet에서 설치
+    - `Connection` : DB연결객체, 생성시 DB연결문자열 필요
+    - `Command` : 쿼리를 컨트롤 객체,  MySqlCommand. 생성시 쿼리문, Connection객체 필요
+        - ExecuteNonQuery() : INSERT, UPDATE, DELETE 명령 실행
+        - ExecuteReader() : SELECT문 실행, 데이터읽어오고 반복문으로 직접 제어
+        - ExecuteScalar() : COUNT 함수 처럼 1개 값만 리턴되는 쿼리 실행
+    - `Parameter` : 쿼리 WHERER 절 등에 들어가는 파라미터(@컬럼명) 지정하는 객체 
+    - `DataAdapter` : Command 객체를 자동으로 반복문 처리해주는 객체
+        - ExecuteReader()로 생성된 결과는 수동으로 반복문 처리
+        - 각 데이터별 조작이 필요할 때 불편함
+    - `DataReader` : ExecuteReader()로 생성된 결과를 담는 객체
+    - 여기까지 Sql, MySQL, Oracle 등 DB종류별로 Prefix가 붙음
+    - DataTable : DataAdapter로 생성된 데이터를 담는 공통 객체
+
+#### 콤보박스 바인딩
+
+![alt text](image-30.png)
+
+```xml
+<ComboBox 
+    x:Name="CboDivCode" Grid.Row="2" Margin="5"
+    SelectedValuePath="div_code"                    
+    DisplayMemberPath="div_name"
+```
+![alt text](image-31.png)
+
+#### 입력값 검증
+- 실무에서 DB에 데이터 입력전에 가장 중요한 부분
+- 입력값 검증을 제대로 해야 DB에 잘못된 데이터가 저장되지 않음
+
+```cs
+// Validation Check
+if (string.IsNullOrEmpty(author) || string.IsNullOrEmpty(bookName) || string.IsNullOrEmpty(divCode))
+{
+    await this.ShowMessageAsync("입력오류", "필수값을 입력하세요");
+    return;
+}                
+                
+// DateTime releaseDt = DateTime.Parse(DtpReleaseDt.Text);  // 예외발생
+// TryParse(가져올값변수, out 담을변수) 메서드. 예외발생하지 않음
+if (!DateTime.TryParse(DtpReleaseDt.Text, out DateTime releaseDt))
+{
+    await this.ShowMessageAsync("입력오류", "날짜형식이 올바르지 않습니다");
+    return;
+}
+
+// 가격도 TryParse
+if (!int.TryParse(TxtPrice.Text, out int price))
+{
+    await this.ShowMessageAsync("입력오류", "가격은 숫자로 입력하세요");
+    return;
+}
+```
+
+- 실행화면
+
+![alt text](image-32.png)
+
+- [xaml](./winapp/IotWpfSolutions/WpfBasic04DbApp/MainWindow.xaml)
+- [소스](./winapp/IotWpfSolutions/WpfBasic04DbApp/MainWindow.xaml.cs)
+
+## 데스트톱앱 강의 진행사항
 
 ### 리소스 디자인 추가
-
-#### Persenter (나중에)
-
+#### Presenter (나중에)
 - 컨트롤의 실제 내용을 화면에 표시하는 자리
+
+### 키오스크 앱
+- 결재이전까지 동작하는 버전
+- WPF를 사용해서 구현
 
 ### OpenAPI연동 앱
 - 미세먼지 모니터링앱
 - 국가교통정보 CCTV뷰 앱
 - IoT 모니터링앱
 
-### 키오스크 앱
-- 결재이전까지 동작하는 버전
-- WPF를 사용해서 구현
+### 스마트홈 앱
+- ??
 
 ### 라이브러리 만들기
+
+### Essential Pathway 학습
+
+### 게임 프로젝트
+- ??
 
 ### 유니티 디지털트윈

@@ -10,7 +10,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfBasic03Navi
+namespace WpfBasic03UiApp
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

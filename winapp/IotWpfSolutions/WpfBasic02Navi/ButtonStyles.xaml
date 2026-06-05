@@ -5,26 +5,20 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Grid>
-
-                        <Rectangle RadiusX="12"
-                                  RadiusY="12"
-                                  Fill="#25A3FB"
-                                  Stroke="DarkBlue"
-                                  StrokeThickness="4">
-
+                        <Rectangle RadiusX="12" RadiusY="12" 
+                                   Fill="#25A3FB" Stroke="DarkBlue" 
+                                   StrokeThickness="4">
                             <Rectangle.Effect>
                                 <DropShadowEffect Color="Black"
-                                                 BlurRadius="20"
-                                                 ShadowDepth="10"
-                                                 Direction="315"
-                                                 Opacity="0.7" />
+                                                  BlurRadius="15"
+                                                  ShadowDepth="5"
+                                                  Direction="320"
+                                                  Opacity="0.5" />
                             </Rectangle.Effect>
-
                         </Rectangle>
-
-                        <ContentPresenter HorizontalAlignment="Center"
-                                         VerticalAlignment="Center"/>
-
+                        <Label Content="{TemplateBinding Content}" 
+                               Foreground="White" FontSize="16" FontWeight="ExtraBold"
+                               HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

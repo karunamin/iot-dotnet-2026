@@ -25,13 +25,13 @@ namespace WpfBasic02Navi
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            MediaPlayer.Source = new Uri(@".\sample.mp4", UriKind.RelativeOrAbsolute);
+            MediaPlayer.Source = new Uri(@".\earth.avi", UriKind.RelativeOrAbsolute);
             MediaPlayer.Play();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("버튼클릭!!!");
+            MessageBox.Show("버튼클릭!!");
         }
     }
 }
