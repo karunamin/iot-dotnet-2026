@@ -58,6 +58,10 @@ CREATE TABLE menu
 - 일부 편집
 - Images 폴더에 붙여넣기
 
+![alt text](image-36.png)
+
+#### MainWindow UI 작업 및 기본 이벤트
+
 ![alt text](image-34.png)
 
 ### 메뉴 옵션 팝업창 작업
