@@ -1,4 +1,4 @@
-# iot-dotnet-2026
+# 2026 IoT개발자 닷넷 학습
 IoT 개발자 닷넷 리포지토리(기본, 중급, 응용, 프로젝트)
 
 ## C# 기본
@@ -907,6 +907,9 @@ if (!int.TryParse(TxtPrice.Text, out int price))
 
 - [xaml](./winapp/IotWpfSolutions/WpfBasic04DbApp/MainWindow.xaml)
 - [소스](./winapp/IotWpfSolutions/WpfBasic04DbApp/MainWindow.xaml.cs)
+
+
+[다음](./README2.md)
 
 ## 데스트톱앱 강의 진행사항
 
