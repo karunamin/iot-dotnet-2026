@@ -70,6 +70,6 @@ CREATE TABLE menu
 
 #### 기본 동작 이벤트 구현
 
-https://github.com/user-attachments/assets/df48613c-af79-4816-a573-7eaa4e7c7e12
+https://github.com/user-attachments/assets/0fecb082-6ee3-496a-9a97-2b6d45667d06
 
 ### OpenAPI 연동앱 개발
