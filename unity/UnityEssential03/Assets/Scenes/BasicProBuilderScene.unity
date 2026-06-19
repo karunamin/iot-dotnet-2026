@@ -20607,6 +20607,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &151201383
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 01d2628c398e3384a83eda8e3fd85c2a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 23.942902
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 01d2628c398e3384a83eda8e3fd85c2a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2893
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 01d2628c398e3384a83eda8e3fd85c2a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 26.852955
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 01d2628c398e3384a83eda8e3fd85c2a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 01d2628c398e3384a83eda8e3fd85c2a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 01d2628c398e3384a83eda8e3fd85c2a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 01d2628c398e3384a83eda8e3fd85c2a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 01d2628c398e3384a83eda8e3fd85c2a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 01d2628c398e3384a83eda8e3fd85c2a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 01d2628c398e3384a83eda8e3fd85c2a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 01d2628c398e3384a83eda8e3fd85c2a, type: 3}
+      propertyPath: m_Name
+      value: Scaniverse
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 01d2628c398e3384a83eda8e3fd85c2a, type: 3}
 --- !u!43 &160577650
 Mesh:
   m_ObjectHideFlags: 0
@@ -25472,17 +25529,9 @@ MonoBehaviour:
   m_Mesh: {fileID: 1078378522}
   m_VersionIndex: 1428
   m_IsSelectable: 1
-  m_SelectedFaces: 3c000000
-  m_SelectedEdges:
-  - a: 222
-    b: 223
-  - a: 224
-    b: 222
-  - a: 223
-    b: 225
-  - a: 225
-    b: 224
-  m_SelectedVertices: de000000df000000e0000000e1000000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!4 &722593687
 Transform:
   m_ObjectHideFlags: 0
@@ -82458,3 +82507,4 @@ SceneRoots:
   - {fileID: 1327214828}
   - {fileID: 1162867081}
   - {fileID: 722593687}
+  - {fileID: 151201383}
