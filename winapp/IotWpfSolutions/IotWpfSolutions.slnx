@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="WpfBasic01App/WpfBasic01App.csproj" />
+  <Project Path="WpfBasic02Navi/WpfBasic02Navi.csproj" Id="83c8d76c-139c-45fb-aa30-0684ba7ba04c" />
+  <Project Path="WpfBasic03UIApp/WpfBasic03UiApp.csproj" />
+  <Project Path="WpfBasic04DbApp/WpfBasic04DBApp.csproj" />
+  <Project Path="WpfTest/WpfTest.csproj" Id="3cb033fc-313d-4fec-88e6-25417e0d0235" />
+</Solution>
