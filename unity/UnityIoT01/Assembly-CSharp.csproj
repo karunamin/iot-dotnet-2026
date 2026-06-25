@@ -43,7 +43,7 @@
     <UnityVersion>6000.4.9f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\DEV\IDE\Microsoft Visual Studio\18\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\18\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.4.9f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.4.9f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.4.9f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
@@ -53,7 +53,6 @@
     <Compile Include="Assets\IotSampleProject\IotConnector\Common\DateTimeGenerator.cs" />
     <Compile Include="Assets\IotSampleProject\IotConnector\Common\FindChildObjects.cs" />
     <Compile Include="Assets\IotSampleProject\IotConnector\IotHub\MessageBus\IMessagePublisher.cs" />
-    <Compile Include="Assets\_Unity Essentials\Source Files\ThirdPersonController\Scripts\BasicRigidBodyPush.cs" />
     <Compile Include="Assets\IotSampleProject\IotConnector\Devices\DeviceGroup.cs" />
     <Compile Include="Assets\IotSampleProject\IotConnector\Devices\DeviceManager.cs" />
     <Compile Include="Assets\IotSampleProject\IotConnector\Affordances\EnhancedContextWindow.cs" />
@@ -67,28 +66,20 @@
     <Compile Include="Assets\IotSampleProject\IotConnector\Affordances\ParticleColorModifier.cs" />
     <Compile Include="Assets\IotSampleProject\Scripts\PathWalker.cs" />
     <Compile Include="Assets\IotSampleProject\IotConnector\Devices\IDeviceProvider.cs" />
-    <Compile Include="Assets\_Unity Essentials\Source Files\Scripts\UpdateCollectibleCount.cs" />
-    <Compile Include="Assets\_Unity Essentials\Source Files\ThirdPersonController\Scripts\ThirdPersonController.cs" />
     <Compile Include="Assets\IotSampleProject\IotConnector\IotHub\Messages\IMessage.cs" />
     <Compile Include="Assets\IotSampleProject\IotConnector\Devices\Thermostat.cs" />
     <Compile Include="Assets\IotSampleProject\IotConnector\IotHub\MessageBus\IMessageBus.cs" />
-    <Compile Include="Assets\_Unity Essentials\Source Files\Scripts\DoorController.cs" />
     <Compile Include="Assets\IotSampleProject\IotConnector\Devices\AzureDeviceProvider.cs" />
     <Compile Include="Assets\IotSampleProject\IotConnector\Common\MonoSingleton.cs" />
     <Compile Include="Assets\IotSampleProject\IotConnector\Devices\DoorSensor.cs" />
     <Compile Include="Assets\IotSampleProject\IotConnector\Affordances\Interactor.cs" />
     <Compile Include="Assets\IotSampleProject\IotConnector\IotHub\Messages\DeviceSimulator.cs" />
     <Compile Include="Assets\IotSampleProject\IotConnector\Affordances\Selectable.cs" />
-    <Compile Include="Assets\_Unity Essentials\Source Files\Scripts\CheckCodeEntered.cs" />
     <Compile Include="Assets\IotSampleProject\Scripts\CameraController.cs" />
     <Compile Include="Assets\IotSampleProject\IotConnector\Devices\LocateDeviceByName.cs" />
-    <Compile Include="Assets\_Unity Essentials\Source Files\Scripts\StarterSceneStar.cs" />
     <Compile Include="Assets\IotSampleProject\IotConnector\IotHub\MessageBus\ListenersForMessageType.cs" />
-    <Compile Include="Assets\_Unity Essentials\Source Files\InputSystem\StarterAssetsInputs.cs" />
     <Compile Include="Assets\IotSampleProject\IotConnector\Plugins\Azure\AzureMessageProvider.cs" />
     <Compile Include="Assets\IotSampleProject\IotConnector\IotHub\BaseMessageProvider.cs" />
-    <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
-    <Compile Include="Assets\_Unity Essentials\Source Files\Scripts\LoadSceneByIndex.cs" />
     <Compile Include="Assets\IotSampleProject\IotConnector\Affordances\Billboard.cs" />
     <Compile Include="Assets\IotSampleProject\IotConnector\Devices\OccupancySensor.cs" />
     <Compile Include="Assets\IotSampleProject\IotConnector\Common\Metadata.cs" />
@@ -97,19 +88,13 @@
     <Compile Include="Assets\IotSampleProject\IotConnector\IotHub\MessageBus\MessageBus.cs" />
     <Compile Include="Assets\IotSampleProject\IotConnector\Devices\DeviceType.cs" />
     <Compile Include="Assets\IotSampleProject\IotConnector\Devices\BaseDevice.cs" />
-    <Compile Include="Assets\_Unity Essentials\Scripts\Provided Scripts\Collectible2D.cs" />
     <Compile Include="Assets\IotSampleProject\IotConnector\Devices\DeviceLocatorManager.cs" />
     <Compile Include="Assets\IotSampleProject\Scripts\RotateAtFrequency.cs" />
-    <Compile Include="Assets\_Unity Essentials\Source Files\Scripts\SimpleCameraController.cs" />
-    <Compile Include="Assets\_Unity Essentials\Source Files\Scripts\PlaySoundAtRandomIntervals.cs" />
     <Compile Include="Assets\IotSampleProject\Scripts\AppStates.cs" />
     <Compile Include="Assets\IotSampleProject\IotConnector\Devices\LocateDeviceByMetadata.cs" />
-    <Compile Include="Assets\_Unity Essentials\Source Files\Scripts\ActivateObjectAfterDelay.cs" />
     <Compile Include="Assets\IotSampleProject\IotConnector\Devices\AzureDeviceManager.cs" />
     <Compile Include="Assets\IotSampleProject\IotConnector\Devices\DeviceLocatorBase.cs" />
     <Compile Include="Assets\IotSampleProject\IotConnector\Devices\GenericDevice.cs" />
-    <Compile Include="Assets\_Unity Essentials\Source Files\Scripts\CustomSceneManager.cs" />
-    <Compile Include="Assets\_Unity Essentials\Scripts\Provided Scripts\PlayerController2D.cs" />
     <Compile Include="Assets\IotSampleProject\IotConnector\Affordances\ContextWindow.cs" />
     <Compile Include="Assets\IotSampleProject\IotConnector\IotHub\Messages\IotDeviceMessageReader.cs" />
   </ItemGroup>
@@ -182,7 +167,6 @@
     <None Include="Assets\IotSampleProject\Plugins\Packages\System.Text.Encodings.Web.4.7.2\lib\netstandard2.1\System.Text.Encodings.Web.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\IotSampleProject\Plugins\Packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\THIRD-PARTY-NOTICES.TXT" />
-    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\IotSampleProject\Plugins\Packages\Azure.Messaging.EventHubs.5.11.5\lib\netstandard2.0\Azure.Messaging.EventHubs.dll" />
     <None Include="Assets\IotSampleProject\Plugins\Packages\System.Diagnostics.DiagnosticSource.6.0.1\THIRD-PARTY-NOTICES.TXT" />
     <None Include="Assets\IotSampleProject\Plugins\Packages\System.ClientModel.1.0.0\lib\netstandard2.0\System.ClientModel.xml" />

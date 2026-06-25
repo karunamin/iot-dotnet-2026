@@ -1,17 +1,25 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <TargetFramework>net10.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>festival.ico</ApplicationIcon>
-    <UserSecretsId>47024d05-4dd2-4a4c-8c16-6b57c2996427</UserSecretsId>
+    <UserSecretsId>c797a370-d738-40cb-9a37-95071dd3ab33</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="NLog.config" />
+    <None Remove="sample_img.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="festival.ico" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -23,9 +31,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Models\FestivalItem.cs">
-      <Generator>MSBuild:Compile</Generator>
-    </Compile>
+    <Content Include="sample_img.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>

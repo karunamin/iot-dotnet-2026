@@ -14,10 +14,7 @@
     <None Remove="Images\hazelnut.png" />
     <None Remove="Images\iceamericano.png" />
     <None Remove="Images\latte.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="kiosk.ico" />
+    <None Remove="Images\mangojuice.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,18 +24,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Images\americano.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\hazelnut.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\iceamericano.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Images\latte.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+    <Content Include="Images\americano.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\hazelnut.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\iceamericano.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\latte.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\mangojuice.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="kiosk.ico" />
   </ItemGroup>
 
 </Project>
