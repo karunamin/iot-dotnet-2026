@@ -606,7 +606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50118e0f72132048bea364e66ba7224, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProductApiClient
-  serviceUrl: http://192.168.0.2:8080/api/products
+  serviceUrl: http://localhost:5276/api/products
   content: {fileID: 161133890}
   productRowPrefab: {fileID: 7637202987754419890, guid: a264425c0d6d3404e9ffe45f3552c94f, type: 3}
 --- !u!4 &291207300
